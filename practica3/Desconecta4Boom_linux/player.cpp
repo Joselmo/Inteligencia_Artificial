@@ -144,6 +144,7 @@ Environment::ActionType Player::Think(){
     //--------------------- COMENTAR Hasta aqui
 */
     cout <<"FUNCIONA o no ";
+    cout <<endl;
 
     //--------------------- AQUI EMPIEZA LA PARTE A REALIZAR POR EL ALUMNO ------------------------------------------------
 

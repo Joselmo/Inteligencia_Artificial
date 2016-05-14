@@ -1,0 +1,5 @@
+Jose:verdes
+Elena:marronez
+Javier:negros
+Sergio:marrones
+Fran:azules

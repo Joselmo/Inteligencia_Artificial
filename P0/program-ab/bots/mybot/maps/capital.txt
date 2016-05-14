@@ -1,0 +1,4 @@
+francia:paris
+espana:madrid
+alemania:berlin
+japon:tokyo

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<topic name="nivel1">
+	<category>
+		<pattern>^ <set>tener</set> ^ <set>pelo</set> ^ </pattern>
+		<template><think>
+			<set var="respuesta">No.</set>
+			<set var="temp"><star index="4"/></set>
+			<set var="real"><map name="jpelo"><get name="elegido"/></map></set>
+			<condition var="real">
+				<li><value><get var="temp"/></value><set var="respuesta">Si.</set></li>
+			</condition>
+		</think><get var="respuesta"/>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ <set>tener</set> ^ ojos <set>ojos</set> ^ </pattern>
+		<template><think>
+			<set var="respuesta">No.</set>
+			<set var="temp"><star index="4"/></set>
+			<set var="real"><map name="jojos"><get name="elegido"/></map></set>
+			<condition var="real">
+				<li><value><get var="temp"/></value><set var="respuesta">Si.</set></li>
+			</condition>
+		</think><get var="respuesta"/>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ <set>tener</set> ^ piel <set>piel</set> ^ </pattern>
+		<template><think>
+			<set var="respuesta">No.</set>
+			<set var="temp"><star index="4"/></set>
+			<set var="real"><map name="jpiel"><get name="elegido"/></map></set>
+			<condition var="real">
+				<li><value><get var="temp"/></value><set var="respuesta">Si.</set></li>
+			</condition>
+		</think><get var="respuesta"/>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ <set>tener</set> ^ gafas ^ </pattern>
+		<template><map name="jgafas"><get name="elegido"/></map></template>
+	</category>
+
+	<category>
+		<pattern>^ <set>tener</set> ^ bigote ^ </pattern>
+		<template><map name="jbigote"><get name="elegido"/></map></template>
+	</category>
+
+	<category>
+		<pattern>^ <set>tener</set> ^ barba ^ </pattern>
+		<template><map name="jbarba"><get name="elegido"/></map></template>
+	</category>
+
+
+	<category>
+		<pattern>Es <set>genero</set> ^ </pattern>
+		<template><think>
+			<set var="respuesta">No.</set>
+			<set var="temp"><star/></set>
+			<set var="real"><map name="jgenerp"><get name="elegido"/></map></set>
+			<condition var="real">
+				<li><value><get var="temp"/></value><set var="respuesta">Si.</set></li>
+			</condition>
+		</think><get var="respuesta"/>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Es <set>jugadores</set></pattern>
+		<template><think>
+			<set var="respuesta">No. Lo siento has perdido.</set>
+			<set var="temp"><star/></set>
+			<condition name="elegido">
+				<li><value><star/></value><set var="respuesta">Enhorabuena has acertado =D</set></li>
+			</condition>
+			<set name="topic"> </set>
+		</think><get var="respuesta"/>
+	</template>
+</category>
+
+<!-- si no es nada 
+	<category>
+		<pattern>^ <set>tener</set> * </pattern>
+		<template>No, nadie tiene ese rasgo/atributo.</template>
+	</category>	
+
+	<category>
+		<pattern>^ esr * </pattern>
+		<template>No, nadie tiene ese rasgo/atributo.</template>
+	</category>
+
+-->
+</topic>
+
+<category>
+	<pattern>^ <set>jugadores</set> ^ <set>pelo</set> </pattern>
+	<template><think>
+			<set var="respuesta">No.</set>
+			<set var="temp"><star index="4"/></set>
+			<set var="real"><map name="jpelo"><star index="2"/></map></set>
+			<condition var="real">
+				<li><value><get var="temp"/></value><set var="respuesta">Si.</set></li>
+			</condition>
+		</think><get var="respuesta"/>
+		</template>
+</category>
+
+<category>
+	<pattern>^ <set>jugadores</set> ^ <set>ojos</set> </pattern>
+	<template><think>
+			<set var="respuesta">No.</set>
+			<set var="temp"><star index="4"/></set>
+			<set var="real"><map name="jojos"><star index="2"/></map></set>
+			<condition var="real">
+				<li><value><get var="temp"/></value><set var="respuesta">Si.</set></li>
+			</condition>
+		</think><get var="respuesta"/>
+		</template>
+</category>
+
+<category>
+	<pattern>^ <set>jugadores</set> ^ <set>piel</set> </pattern>
+	<template><think>
+			<set var="respuesta">No.</set>
+			<set var="temp"><star index="4"/></set>
+			<set var="real"><map name="jpiel"><star index="2"/></map></set>
+			<condition var="real">
+				<li><value><get var="temp"/></value><set var="respuesta">Si.</set></li>
+			</condition>
+		</think><get var="respuesta"/>
+		</template>
+</category>
+
+<category>
+	<pattern>^ <set>jugadores</set> ^ gafas ^ </pattern>
+	<template><map name="jgafas"><star index="2"/></map></template>
+</category>
+
+<category>
+	<pattern>^ <set>jugadores</set> ^ bigote ^ </pattern>
+	<template><map name="jbigote"><star index="2"/></map></template>	</category>
+
+<category>
+	<pattern>^ <set>jugadores</set> ^ barba ^ </pattern>
+	<template><map name="jbarba"><star index="2"/></map></template>
+</category>
+
+
+</aiml>

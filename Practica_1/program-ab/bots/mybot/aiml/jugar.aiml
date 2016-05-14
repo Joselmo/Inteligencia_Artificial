@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+	<pattern>^ JUGAR * WHO IS WHO</pattern>
+	<template>OK vamos a jugar, prefieres preguntar tu o yo?<think>
+	<set var="contador">1</set>
+	<set name="list_jugadores"></set>
+	<!-- Obtener una lista de los jugadores -->
+	<condition var="contador">
+		<li><value>17</value></li>
+		<li>
+			<set name="list_jugadores"><get name="list_jugadores"/> <map name="indexjugadores"><get var="contador"/></map></set>
+			<set var="contador">
+				<map name="successor"><get var="contador"/></map>
+			</set>
+			<loop/>
+		</li>
+	</condition>
+</think></template>
+</category>
+
+
+<category>
+	<pattern>^ yo</pattern>
+	<that>OK vamos a jugar, prefieres preguntar tu o yo</that>
+	<template>Ok, Voy a pensar un personaje y me preguntas 
+...<think><set name="topic">nivel1</set>
+	<!-- Sacar uno de forma aleatoria -->
+	<set var="cantidad"><srai>COUNT <get name="list_jugadores"/></srai></set>
+	<set var="pos"><srai>RANDOM <get var="cantidad"/></srai></set>
+	<set name="elegido"><srai>SELECTITEM <get var="pos"/> IN <get name="list_jugadores"/></srai></set>
+</think>
+Ya, empieza a preguntar</template>
+</category>
+
+
+<category>
+	<pattern> ^ tu ^ </pattern>
+	<that>OK vamos a jugar, prefieres preguntar tu o yo</that>
+	<template>Ok, piensa un personaje y te pregunto, listo? <think><set name="topic">nivel2</set></think></template>
+	
+</category>
+
+</aiml>

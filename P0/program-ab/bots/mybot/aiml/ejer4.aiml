@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- regla 1 -->
+<category>
+	<pattern>Es <set>compi</set> un companiero</pattern>
+	<template>Si lo es.</template>
+</category>
+
+<category>
+	<pattern>Es * un companiero</pattern>
+	<template>No conozco a ningun <star /></template>
+</category>
+
+<!-- regla 2 -->
+<category>
+	<pattern>^ de que color son los ojos de <set>compi</set></pattern>
+	<template>Son de color <map name="ojos"> <star index="2"/> </map> </template>
+</category>
+
+<!-- regla 3 -->
+<category>
+	<pattern>^ de que color son los ojos de *</pattern>
+	<template><srai>ES <star index="2"/> UN COMPANIERO</srai> </template>
+</category>
+
+<!-- regla 4 -->
+<category>
+	<pattern>^ de que color es el pelo de <set>compi</set></pattern>
+	<template>Su pelo es <map name="pelo"> <star index="2"/> </map> </template>
+</category>
+
+<!-- regla 5 -->
+<category>
+	<pattern>^ de que color es el pelo de *</pattern>
+	<template><srai>ES <star index="2"/> UN COMPANIERO</srai></template>
+</category>
+
+
+
+<!-- regla 6 -->
+<category>
+	<pattern>Que companieros son <set>colorpelo</set></pattern>
+	<template>
+		<think>
+			<set var="contador">1</set>
+			<set var="salida"></set>
+			<set var="color"><star/></set>
+		</think>
+		<condition var="contador">
+			<li><value>6</value><get var="salida"/></li>
+			<li>
+				<think>
+					<condition var="color">
+						<li><value><map name="pelo"><map name="icompi"><get var="contador"/></map></map></value>
+							<set var="salida"><get var="salida"/> <map name="icompi"><get var="contador"/></map></set>
+						</li><!-- jmlo -->
+					</condition>
+					<set var="contador">
+						<map name="successor"><get var="contador"/></map>
+					</set>
+				</think>
+				<loop/>
+			</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Que companieros son *</pattern>
+		<template>Ninguno</template>
+	</category>
+
+
+</aiml>

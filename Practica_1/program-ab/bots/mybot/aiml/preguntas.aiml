@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- regla 1 -->
+	<category>
+		<pattern>COMO APRUEBO IA</pattern>
+		<template>Para aprobar IA <srai>MINIMO  PARA APROBAR</srai>
+Con un minimo en teoria o practicas de 3.</template>
+	</category>
+
+	<!-- regla 2 -->
+	<category>
+		<pattern>COMO HAGO PARA APROBAR LA TEORIA</pattern>
+		<template>Para la parte de teoría se realizará un examen final que se valorará sobre 10.
+Durante el curso se realizarán tres pruebas que conjuntamente podrían dar un máximo de 2
+puntos sobre el examen final. La nota final de teoría sería el mínimo entre 10 y la suma de
+la nota del examen con la nota obtenida en las pruebas parciales.  
+
+</template>
+	</category>
+
+	<!-- regla 3 -->
+	<category>
+		<pattern>COMO CONSIGO SUPERAR LA PARTE PRACTICA</pattern>
+		<template>Para la parte de prácticas se tendrá en cuenta la asistencia y participación a las 
+clases (esta parte constituye el 10% de la nota de prácticas), y adicionalmente se realizarán tres
+prácticas y un examen de problemas, la nota será la media de estas cuatro pruebas (esta parte 
+constituye el 90% de la nota de prácticas). La parte de prácticas se realiza por evaluación 
+continua y no se realizará un examen final.
+
+		</template>
+	</category>
+
+	<!-- regla 4 -->
+	<category>
+		<pattern>COMO SE EVALUA EN LA CONVOCATORIA DE JUNIO</pattern>
+		<template>La nota final de teoría (50%) sería el mínimo entre un examen final sobre 10 y 
+la suma de la nota del examen con la nota obtenida en las tres pruebas parciales, un maximo de 2 puntos.
+La nota final de prácticas (50%) sería la suma ponderada de asistencia y particiapación (10%) y la nota de 4 prácticas (22.5% cada una)</template>
+	</category>
+
+	<!-- regla 5 -->
+	<category>
+		<pattern>QUE PASA SI TENGO QUE PRESENTARME EN LA CONVOCATORIA DE SEPTIEMBRE</pattern>
+		<template>Tendras un unico examen sobre 10.</template>
+	</category>
+
+	<!-- regla 6 -->
+	<category>
+		<pattern>HAY EXAMEN DE PRACTICAS EN LA CONVOCATORIA DE SEPTIEMBRE</pattern>
+		<template>El examen unico de septiembre ya contiene preguntas de la parte de practicas.</template>
+	</category>
+
+	<!-- regla 7 -->
+	<category>
+		<pattern>QUE PASA SI NO PUEDO ASISTIR A CLASE REGULARMENTE</pattern>
+		<template>En teoria no es obligatoria la asistencia. Pero en practicas tiene que asistir 
+a la defensa y entrega de 3/4 practicas como minimo.</template>
+
+	</category>
+
+	<!-- regla 8  y 14-->
+	<category>
+		<pattern>^ <set>minimo</set> ^ PARA APROBAR ^</pattern>
+		<template>Se necesita un minimo de 5 puntos sobre la nota final.</template>
+	</category>
+
+	<!-- regla 9 -->
+	<category>
+		<pattern>LAS PRACTICAS SON OBLIGATORIAS</pattern>
+		<template>Si, necesitas una calificacion de 3 sobre 10 como minimo.</template>
+	</category>
+
+	<!-- regla 11 -->
+	<category>
+		<pattern>CUANTO VALE * CON RESPECTO A LA NOTA FINAL</pattern>
+		<template>Vale un 5%</template>
+	</category>
+
+	<!-- regla 10 y 12 -->
+	<category>
+		<pattern>CUANTO VALE <set>practica</set> CON RESPECTO A LA NOTA FINAL</pattern>
+		<template>Cada practica vale 11.25%</template>
+	</category>
+
+	<!-- regla 13 -->
+	<category>
+		<pattern>COMO SE CONSIGUEN PUNTOS POR PARTICIPACION</pattern>
+		<template>Resolviendo problemas en la pizarra y participando en clase.</template>
+	</category>
+
+	<!-- regla 15 -->
+	<category>
+		<pattern>LOS TRABAJOS SON INDIVIDUALES</pattern>
+		<template>Los trabajos son individuales, si se detecta copia en cualquier sentido <srai>Y SI SUSPENDO EN LA CONVOCATORIA DE JUNIO</srai></template>
+	</category>
+
+	<!-- regla 16 -->
+	<category>
+		<pattern>SE PUEDEN HACER LOS TRABAJOS EN GRUPO</pattern>
+		<template>No, <srai>LOS TRABAJOS SON INDIVIDUALES</srai></template>
+	</category>
+
+	<!-- regla 17 -->
+	<category>
+		<pattern>HAY QUE ENTREGAR LOS EJERCICIOS DE LAS RELACIONES DE PROBLEMAS</pattern>
+		<template>No hace falta.</template>
+	</category>
+
+	<!-- regla 18 -->
+	<category>
+		<pattern>POR QUE TENGO QUE ESTUDIAR</pattern>
+		<template>Para aprender.</template>
+	</category>
+
+	<!-- regla 19 -->
+	<category>
+		<pattern>CUANTO VALE EL * EXAMEN DE TEORIA</pattern>
+		<template>Vale <map name="pruebasteoricas"><star/></map> puntos</template>
+	</category>
+
+	<!-- regla 20 -->
+	<category>
+		<pattern>PUEDO TENER UNA NOTA MAYOR A 10</pattern>
+		<template>No, en el acta solo se pueden puntuar de 0 a 10 con un decimal.</template>
+	</category>
+
+	<!-- regla 21 -->
+	<category>
+		<pattern>PUEDO RECUPERAR UNA PRACTICA O EXAMEN</pattern>
+		<template>No.</template>
+	</category>
+
+	<!-- regla 22 y 23 -->
+	<category>
+		<pattern>^ ME ^ <set>copiar</set> * </pattern>
+		<template><srai>LOS TRABAJOS SON INDIVIDUALES</srai></template>
+	</category>
+
+	<!-- regla 24 -->
+	<category>
+		<pattern>Y SI SUSPENDO EN LA CONVOCATORIA DE JUNIO</pattern>
+		<template>Tendras que ir a septiembre. </template>
+	</category>
+
+	<!-- regla 25 -->
+	<category>
+		<pattern>CUANTO VALE LA PRACTICA Y LA TEORIA</pattern>
+		<template>50% de la nota final cada una.</template>
+	</category>
+
+	<!-- regla 26 -->
+	<category>
+		<pattern>CUAL ES EL HORARIO DE TUTORIAS DEL PROFESOR DE PRACTICAS</pattern>
+		<template>Lunes: 10:00 a 13:30
+Martes: 10:00 a 11:30
+Miercoles: 17:00 a 18:00
+Todas ellas en el Despacho 23 de la 4º planta de la ETSIIT.</template>
+	</category>
+
+	<!-- regla 27 -->
+	<category>
+		<pattern>CUAL ES EL CORREO ELECTRONICO DEL PROFESOR DE TEORIA</pattern>
+		<template>faro@decsai.ugr.es</template>
+	</category>
+
+	<!-- regla 28 -->
+	<category>
+		<pattern>SE PUEDE APROBAR LA PARTE PRACTICA DE LA ASIGNATURA SI NO PRESENTO UNA PRACTICA</pattern>
+		<template>Si, ya que se necesita <srai>^ NOTA MINIMA ^ MEDIA ^</srai> de la parte practica y cada practica solo vale 2.25 puntos sobre 10 de las practicas.</template>
+	</category>
+
+	<!-- regla 29 -->
+	<category>
+		<pattern>^ NOTA MINIMA ^ MEDIA ^</pattern>
+		<template>3 puntos sobre 10 para hacer media</template>
+	</category>
+
+	<!-- regla 30 -->
+	<category>
+		<pattern>QUE PUNTUACION OBTENGO EN LA PRACTICA 1 SI OPTO POR DEFENDER EL NIVEL <set>number</set> Y NO LO SUPERO</pattern>
+		<template>
+			<think>
+				<set var="state"><star/></set>
+				<set var="resultado">La practica 1 solo tiene 3 niveles</set>
+			<condition var="state">
+				<li value="0">Optas a un <set var="resultado">0</set></li>
+				<li value="1">Optas a un <set var="resultado">4</set></li>
+				<li value="2">Optas a un <set var="resultado">6</set></li>
+				<li value="3">Optas a un <set var="resultado">6</set></li>
+			</condition>
+		</think> <get var="resultado" />
+		</template>
+	</category>
+
+	<!-- regla 31 -->
+	<category>
+		<pattern>PUEDO ENTREGAR LA PRACTICA 1 SIN HACER LA TAREA RELATIVA AL NIVEL 0</pattern>
+		<template>Si, pero su nota sera de 0.</template>
+	</category>
+
+	<!-- regla 32 -->
+	<category>
+		<pattern>QUE TENGO QUE HACER SI NO PUEDO ASISTIR A LA SESION DE PRACTICAS EN LA QUE ME CORRESPONDE HACER LA DEFENSA DE MI PRACTICA 1</pattern>
+		<template>Mandarle un correo al profesor y hablar con el.</template>
+	</category>
+
+	<!-- regla 33 -->
+	<category>
+		<pattern>CUANTAS PRUEBAS TEORICAS TENDRE A LO LARGO DEL CURSO</pattern>
+		<template>Tres pruebas a lo largo del curso y una final</template>
+	</category>
+
+	<!-- regla 34 -->
+	<category>
+		<pattern>QUE VALE LA * PRUEBA TEORICA</pattern>
+		<template>
+			<think>
+				<set var="salida">Solo hay 4 pruebas teoricas</set>
+				<set var="entrada"><star/></set>
+				<condition var="entrada">
+					<li value="primera"><set var="salida">Vale <map name="pruebasteoricas">primer</map> puntos</set> </li>
+					<li value="segunda"><set var="salida">Vale <map name="pruebasteoricas">segundo</map> punto</set></li>
+					<li value="tercera"><set var="salida">Vale <map name="pruebasteoricas">tercer</map> puntos</set></li>
+					<li value="ultima"><set var="salida">Vale <map name="pruebasteoricas">ultima</map> puntos</set></li>
+				</condition>
+			</think><get var="salida"/>
+			</template>
+	</category>
+
+	<!-- regla 35 -->
+	<category>
+		<pattern>EN LA PARTE TEORICA SE TIENE EN CUENTA LA ASISTENCIA</pattern>
+		<template>No</template>
+	</category>
+
+	<!-- regla 36 -->
+	<category>
+		<pattern>EN QUE CONSISTE EL EXAMEN DE EJERCICIOS</pattern>
+		<template>En ejercicios parecidos a la relacion de problemas dada.</template>
+	</category>
+
+	<!-- regla 37 -->
+	<category>
+		<pattern>QUE OCURRE SI NO QUIERO DEFENDER UNA PRACTICA</pattern>
+		<template>La practica tendra una puntuación de 0.</template>
+	</category>
+
+	<!-- regla 38 -->
+	<category>
+		<pattern>QUE DEBERIA HACER SI NO ESTOY SEGURO DE PODER SUPERAR EL NIVEL 3 DE LA PRACTICA 1</pattern>
+		<template>Hacer el nivel 2, que es mas sencillo.</template>
+	</category>
+
+	<!-- regla 39 -->
+	<category>
+		<pattern>CUANTAS PRACTICAS ENTREGABLES TIENE LA ASIGNATURA</pattern>
+		<template>Tiene 3 practicas.</template>
+	</category>
+
+	<!-- regla 40 -->
+	<category>
+		<pattern>YO PROGRAMO MUY BIEN EN C++, PODRIA HACER LAS PRACTICAS EN ESE LENGUAJE</pattern>
+		<template>En esta primera practica no, tiene que ser con aiml.</template>
+	</category>
+
+	<!-- regla 41 -->
+	<category>
+		<pattern>ODIO AIML PODRIA HACER LAS PRACTICAS CON OTRO LENGUAJE</pattern>
+		<template>Esta primera practica no puedes.</template>
+	</category>
+
+	<!-- regla 42 -->
+	<category>
+		<pattern>^ OFICINA * PROFESOR DE PRACTICAS</pattern>
+		<template>despacho nº 24 de la 4º planta.</template>
+	</category>
+
+	<!-- regla 43 -->
+	<category>
+		<pattern>^ OFICINA * PROFESOR DE TEORIA</pattern>
+		<template>despacho nº 23 de la 4º planta.</template>
+	</category>	
+
+	<!-- regla 42.1 -->
+	<category>
+		<pattern>^ DONDE * DESPACHO DEL PROFESOR DE *</pattern>
+		<template>
+			<think>
+				<set var="tipo"><star index="3"/></set>
+			</think>
+			<condition var="tipo">
+				<li value="teoria">En el <srai>^ OFICINA * PROFESOR DE TEORIA</srai></li>
+				<li value="practicas">En el <srai>^ OFICINA * PROFESOR DE PRACTICAS</srai></li>
+			</condition>
+		</template>
+	</category>
+
+	<!-- regla 44 -->
+	<category>
+		<pattern>SUMO 15 PUNTOS EN LAS PRACTICAS QUE YA HE HECHO, ESO ME ASEGURA APROBAR LAS PRACTICAS</pattern>
+		<template><srai>PUEDO TENER UNA NOTA MAYOR A 10</srai></template>
+	</category>
+
+	<!-- regla 45 -->
+	<category>
+		<pattern>SUMO 20 PUNTOS EN LAS PRACTICAS QUE YA HE HECHO, ESO ME ASEGURA APROBAR LA ASIGNATURA</pattern>
+		<template><srai>PUEDO TENER UNA NOTA MAYOR A 10</srai></template>
+	</category>
+
+	<!-- regla 46 -->
+	<category>
+		<pattern>ME INCORPORE TARDE A LA ASIGNATURA Y NO PUDE HACER LA PRACTICA 1, PUEDO RECUPERAR ESA PRACTICA</pattern>
+		<template>No</template>
+	</category>
+
+	<!-- regla 47 -->
+	<category>
+		<pattern>ME INCORPORE TARDE A LA ASIGNATURA Y NO PUDE HACER LA PRACTICA 1, TENGO POSIBILIDADES DE APROBAR LA PARTE PRACTICA</pattern>
+		<template><srai>SE PUEDE APROBAR LA PARTE PRACTICA DE LA ASIGNATURA SI NO PRESENTO UNA PRACTICA</srai></template>
+	</category>
+
+	<!-- regla 48 -->
+	<category>
+		<pattern>ME ENCANTAN LOS AGENTES CONVERSACIONALES Y SOY UN EXPERTO EN SU CONSTRUCCIÓN PODRIA USAR AGENTES CONVERSACIONALES PARA QUE VAYAN EN MI LUGAR A HACER LA DEFENSA DE PRACTICAS</pattern>
+		<template>Si, si es capaz de responder al profesor sin que el se de cuenta que de 
+no eres tu si no tu agente conversacional.</template>
+	</category>
+
+	<!-- regla 49 -->
+	<category>
+		<pattern>EN LAS SIGUIENTES PRACTICAS HAY TAMBIEN QUE PROGRAMAR</pattern>
+		<template>Si</template>
+	</category>
+
+	<!-- regla 50 -->
+	<category>
+		<pattern>EL NIVEL 0 ES MUY FACIL, EL RESTO DE LA PRACTICA SE COMPLICA MUCHO</pattern>
+		<template>Si, tienes que programarme para que podamos jugar al Quien es Quien. ;)</template>
+	</category>
+
+</aiml>

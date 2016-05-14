@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<topic name="nivel2">
+
+	<!-- PELO MORENO -->
+	<category>
+		<pattern>Si</pattern>
+		<that>Ok, piensa un personaje y te pregunto, listo ^</that>
+		<template>Tiene el pelo moreno</template>
+	</category>
+
+	<category>
+		<pattern>Si</pattern>
+		<that>Tiene el pelo moreno</that>
+		<template>Tiene los ojos oscuros <think><set name="topic">nivel2Marron</set></think></template>
+	</category>
+
+	<!-- PELO RUBIO -->
+	<category>
+		<pattern>No</pattern>
+		<that>Tiene el pelo moreno</that>
+		<template>Tiene el pelo rubio </template>
+	</category>
+
+	<category>
+		<pattern>Si</pattern>
+		<that>Tiene el pelo rubio</that>
+		<template>Tiene bigote <think><set name="topic">nivel2rubio</set></think></template>
+	</category>
+
+	<!-- PELO PELIRROJO -->
+	<category>
+		<pattern>No</pattern>
+		<that>Tiene el pelo rubio</that>
+		<template>Tiene el pelo pelirrojo</template>
+	</category>
+
+	<category>
+		<pattern>Si</pattern>
+		<that>Tiene el pelo pelirrojo</that>
+		<template>Tiene los ojos oscuros <think><set name="topic">nivel2rojo</set></think></template>
+	</category>
+
+	<!-- PELO CALVO -->
+	<category>
+		<pattern>No</pattern>
+		<that>Tiene el pelo pelirrojo</that>
+		<template>Es Calvo</template>
+	</category>
+
+	<category>
+		<pattern>Si</pattern>
+		<that>Es calvo</that>
+		<template>Tiene los ojos oscuros <think><set name="topic">nivel2calvo</set></think></template>
+	</category>
+
+	<!-- PELO OTROS -->
+	<category>
+		<pattern>No </pattern>
+		<that>Es calvo</that>
+		<template>Tiene los ojos oscuros</template>
+	</category>
+
+	<category>
+			<pattern>No</pattern>
+			<that>Tiene los ojos oscuros</that>
+			<template>El personaje es Gabriela <think><set name="topic">unknown</set></think> ?</template>
+	</category>	
+
+	<category>
+			<pattern>Si</pattern>
+			<that>Tiene los ojos oscuros</that>
+			<template>El personaje es Sofia <think><set name="topic">unknown</set></think> ?</template>
+	</category>
+
+</topic><!-- FIN NIVEL 2 -->
+
+<topic name="nivel2Marron">
+	<category>
+		<pattern>Si</pattern>
+		<that>Tiene los ojos oscuros ^</that>
+		<template>Tiene bigote <think><set name="topic">nivel2MarronOscuros</set></think></template>
+	</category>
+
+	<!-- OJOS CLAROS -->
+	<category>
+		<pattern>No</pattern>
+		<that>Tiene los ojos oscuros ^</that>
+		<template>Tiene la piel clara <think><set name="topic">nivel2MarronClaros</set></think></template>
+	</category>
+
+</topic> <!-- FIN NIVEL 2 - Moreno -->
+
+<topic name="nivel2MarronOscuros">
+	<category>
+		<pattern>No</pattern>
+		<that>Tiene bigote ^</that>
+		<template>El personaje es Alejandro <think><set name="topic">unknown</set></think> ?</template>
+	</category>
+
+	<category>
+		<pattern>Si</pattern>
+		<that>Tiene bigote ^</that>
+		<template>Tiene barba</template>
+	</category>
+
+	<category>
+		<pattern>Si</pattern>
+		<that>Tiene barba</that>
+		<template>El personaje es Antonio <think><set name="topic">unknown</set></think>?</template>
+	</category>
+
+	<category>
+		<pattern>No</pattern>
+		<that>Tiene barba</that>
+		<template>El personaje es Javier <think><set name="topic">unknown</set></think> ?</template>
+	</category>
+
+</topic> <!-- FIN NIVEL 2 - Moreno - Ojos Oscuros -->
+	
+<topic name="nivel2MarronClaros">
+	<category>
+		<pattern>No</pattern>
+		<that>Tiene la piel clara ^</that>
+		<template>El personaje es Sonia <think><set name="topic">unknown</set></think> ?</template>
+		
+	</category>
+
+
+	<category>
+		<pattern>Si</pattern>
+		<that>Tiene la piel clara ^</that>
+		<template>Tiene bigote</template>
+	</category>
+
+	<category>
+			<pattern>Si</pattern>
+			<that>Tiene bigote</that>
+			<template>El personaje es Alfonso <think><set name="topic">unknown</set></think> ?</template>
+	</category>
+
+	<category>
+			<pattern>No</pattern>
+			<that>Tiene bigote</that>
+			<template>El personaje es Cristina <think><set name="topic">unknown</set></think> ?</template>
+	</category>
+</topic>
+
+
+
+<topic name="nivel2rubio">
+
+	<category>
+		<pattern>Si</pattern>
+		<that>Tiene bigote ^</that>
+		<template>El personaje es Ivan <think><set name="topic">unknown</set></think> ?</template>
+	</category>
+
+	<category>
+		<pattern>No</pattern>
+		<that>Tiene bigote ^</that>
+		<template>Es mujer</template>
+	</category>
+
+	<category>
+		<pattern>No</pattern>
+		<that>Es mujer</that>
+		<template>El personaje es Paco <think><set name="topic">unknown</set></think> ?</template>
+	</category>
+
+	<category>
+		<pattern>Si</pattern>
+		<that>Es mujer</that>
+		<template>El personaje es Laura <think><set name="topic">unknown</set></think> ?</template>
+	</category>
+
+</topic> <!-- FIN NIVEL 2 - Rubio -->
+
+
+<topic name="nivel2rojo">
+
+	<category>
+		<pattern>Si</pattern>
+		<that>Tiene los ojos oscuros ^</that>
+		<template>Tiene bigote</template>
+	</category>
+
+	<category>
+		<pattern>No</pattern>
+		<that>Tiene los ojos oscuros ^</that>
+		<template>El personaje es Luis <think><set name="topic">unknown</set></think> ?</template>
+	</category>
+
+	<category>
+		<pattern>Si</pattern>
+		<that>Tiene bigote</that>
+		<template>El personaje es Pepe <think><set name="topic">unknown</set></think> ?</template>
+	</category>
+
+	<category>
+		<pattern>No</pattern>
+		<that>Tiene bigote</that>
+		<template>El personaje es Maria <think><set name="topic">unknown</set></think> ?</template>
+	</category>
+
+</topic><!-- FIN NIVEL 2 - Pelirrojo -->
+
+
+<topic name="nivel2calvo">
+
+	<category>
+		<pattern>No</pattern>
+		<that>Tiene los ojos oscuros ^</that>
+		<template>El personaje es Marco <think><set name="topic">unknown</set></think> ?</template>
+	</category>	
+
+	<category>
+		<pattern>Si</pattern>
+		<that>Tiene los ojos oscuros ^</that>
+		<template>El personaje es Juan <think><set name="topic">unknown</set></think> ?</template>
+	</category>
+
+</topic><!-- FIN NIVEL 2 - Calvo -->
+
+<category>
+	<pattern>Si</pattern>
+	<that>El personaje es ^ </that>
+	<template>Que bueno que soy.</template>
+</category>
+
+<category>
+	<pattern>No</pattern>
+	<that>El personaje es ^ </that>
+	<template>Entonces has olvidado el personaje.</template>
+</category>
+
+
+</aiml>

@@ -76,11 +76,31 @@ void JuegoAleatorio(bool aplicables[], int opciones[], int &j){
     }
 }
 
+// --------------------------------------------------------------------
+double Prueba(const Environment &T, int jugador, int prof, int &act){
+    double max = menosinf;
+    if(prof == 0){
+        return ValoracionTest(T,jugador);
+    }else{
+        int ul_act = -1, kk;
+        double valor;
 
+        Environment hijo = T.generateNextMove(ul_act);
+        while( ul_act < 8){ // mientras pueda generar hijos
+            valor = Prueba(hijo,jugador,prof -1, kk);
 
+            if(valor > max){
+                max = valor;
+                act = ul_act;
+            }
 
+            hijo = T.generateNextMove(ul_act);
+        }
+        return max;
+    }
 
-
+}
+// --------------------------------------------------------------------
 // Invoca el siguiente movimiento del jugador
 Environment::ActionType Player::Think(){
     const int PROFUNDIDAD_MINIMAX = 6;  // Umbral maximo de profundidad para el metodo MiniMax
@@ -145,7 +165,7 @@ Environment::ActionType Player::Think(){
 */
     cout <<"Empiezo por fin";
     cout <<endl;
-    int a;
+
 
     //--------------------- AQUI EMPIEZA LA PARTE A REALIZAR POR EL ALUMNO ------------------------------------------------
 
